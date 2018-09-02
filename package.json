@@ -77,9 +77,9 @@
     "appId": "club.cabal.desktop",
     "protocols": [
       {
-        "name": "Dat Link",
+        "name": "Cabal",
         "schemes": [
-          "dat"
+          "cabal"
         ]
       }
     ],
