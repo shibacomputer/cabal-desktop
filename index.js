@@ -122,10 +122,11 @@ app.on('ready', () => {
 
 app.on('window-all-closed', () => app.quit())
 
-const quit = app.makeSingleInstance(() => {
+const hasLock = app.requestSingleInstanceLock()
+app.on('second-instance', (event, argv, cwd) => {
   if (!win) return
   if (win.isMinimized()) win.restore()
   win.focus()
 })
 
-if (quit) app.quit()
+if (!hasLock) app.quit()
